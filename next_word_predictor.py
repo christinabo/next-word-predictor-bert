@@ -4,8 +4,8 @@ import string
 
 
 def load_models():
-    tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-    model = BertForMaskedLM.from_pretrained('bert-base-uncased')
+    tokenizer = BertTokenizer.from_pretrained('prajjwal1/bert-small')
+    model = BertForMaskedLM.from_pretrained('prajjwal1/bert-small')
     return tokenizer, model
 
 
@@ -38,6 +38,6 @@ def predict(input_ids, model, tokenizer, top_k=5, top_clean=5):
 
 if __name__ == '__main__':
     tokenizer, model = load_models()
-    input_text = "Only lovers left"
+    input_text = "The anarchism is relevant when"
     input_ids, mask_idx = encode_input(input_text, tokenizer)
     print(predict(input_ids, model, tokenizer))
