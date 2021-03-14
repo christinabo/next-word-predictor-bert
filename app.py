@@ -18,7 +18,6 @@ def read_root():
     return {"Hello": "World"}
 
 
-@app.get("/items/{input_text}")
-def read_item(input_text: str, q: Optional[str] = None):
-
+@app.get("/items/{item_id}")
+def read_item(item_id: int, q: Optional[str] = None):
     return {"item_id": item_id, "q": q}
