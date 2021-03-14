@@ -1,8 +1,16 @@
 from typing import Optional
-
 from fastapi import FastAPI
+from next_word_predictor import load_models
 
 app = FastAPI()
+
+tokenizer = None
+model = None
+
+
+@app.on_event("startup")
+async def load_models():
+    tokenizer, model = load_models()
 
 
 @app.get("/")
