@@ -5,12 +5,15 @@ fastapi==0.63.0
 filelock==3.0.12
 gunicorn==20.0.4
 h11==0.12.0
+httptools==0.1.1
 idna==2.10
 joblib==1.0.1
 numpy==1.19.5
 packaging==20.9
 pydantic==1.8.1
 pyparsing==2.4.7
+python-dotenv==0.15.0
+PyYAML==5.4.1
 regex==2020.11.13
 requests==2.25.1
 sacremoses==0.0.43
@@ -23,3 +26,6 @@ transformers==4.3.3
 typing-extensions==3.7.4.3
 urllib3==1.26.3
 uvicorn==0.13.4
+uvloop==0.15.2
+watchgod==0.7
+websockets==8.1
