@@ -1,1 +1,1 @@
-web: gunicorn -b 127.0.0.1:$PORT app:app
+web: gunicorn -w 4 -k uvicorn.workers.UvicornWorker app:app
