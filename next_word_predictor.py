@@ -1,5 +1,5 @@
 import torch
-from transformers import BertTokenizer, BertForMaskedLM, AutoTokenizer, AutoModelForMaskedLM
+from transformers import BertTokenizer, BertForMaskedLM, AutoTokenizer, AutoModel
 import string
 
 
@@ -7,7 +7,7 @@ class Model:
     def __init__(self):
         print("Called")
         self.tokenizer = AutoTokenizer.from_pretrained('prajjwal1/bert-small')
-        self.model = AutoModelForMaskedLM.from_pretrained('prajjwal1/bert-small')
+        self.model = AutoModel.from_pretrained('prajjwal1/bert-small')
 
     def encode_input(self, input_text, add_special_tokens=True):
         input_text = input_text + ' ' + self.tokenizer.mask_token
