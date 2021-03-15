@@ -11,7 +11,7 @@ model = None
 
 @app.on_event("startup")
 async def load_models():
-    tokenizer, model = load_models()
+    tokenizer, model = await load_models()
 
 
 @app.get("/")
