@@ -14,6 +14,6 @@ def read_root():
 @app.get("/predict/{q}")
 def read_item(q: str = None,  bert_model: Model = Depends(get_model)):
     print(q)
-    preditions = bert_model.predict(q)
-    return {"q": q, "predictions": preditions}
+    predictions = bert_model.predict(q)
+    return {"q": q, "predictions": predictions}
 
