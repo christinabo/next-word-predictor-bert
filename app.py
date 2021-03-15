@@ -1,12 +1,9 @@
 from typing import Optional
 from fastapi import FastAPI, Depends
 import uvicorn
-from next_word_predictor import Model, get_model, predict
+from next_word_predictor import Model, get_model
 
 app = FastAPI()
-
-tokenizer = None
-model = None
 
 
 @app.get("/")
@@ -17,6 +14,6 @@ def read_root():
 @app.get("/predict/{q}")
 def read_item(q: str = None,  bert_model: Model = Depends(get_model)):
     print(q)
-    preditions = predict(q, bert_model.model, bert_model.tokenizer)
+    preditions = bert_model.predict(q)
     return {"q": q, "predictions": preditions}
 
