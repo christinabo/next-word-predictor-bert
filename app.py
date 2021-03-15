@@ -1,7 +1,7 @@
 from typing import Optional
 from fastapi import FastAPI
 import uvicorn
-from next_word_predictor import load_models
+from next_word_predictor import load_models as load_models_from_predictor
 
 app = FastAPI()
 
@@ -11,7 +11,7 @@ model = None
 
 @app.on_event("startup")
 async def load_models():
-    tokenizer, model = await load_models()
+    tokenizer, model = await load_models_from_predictor()
 
 
 @app.get("/")
