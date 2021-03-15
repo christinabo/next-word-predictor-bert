@@ -20,7 +20,7 @@ sacremoses==0.0.43
 six==1.15.0
 starlette==0.13.6
 tokenizers==0.10.1
-https://download.pytorch.org/whl/cpu/torch-1.4.0%2Bcpu-cp38-cp38-linux_x86_64.whl
+https://download.pytorch.org/whl/cpu/torch-1.8.0%2Bcpu-cp38-cp38-linux_x86_64.whl
 tqdm==4.59.0
 transformers==4.3.3
 typing-extensions==3.7.4.3
