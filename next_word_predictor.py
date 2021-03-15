@@ -1,13 +1,13 @@
 import torch
-from transformers import BertTokenizer, BertForMaskedLM
+from transformers import BertTokenizer, BertForMaskedLM, AutoTokenizer, AutoModelForMaskedLM
 import string
 
 
 class Model:
     def __init__(self):
         print("Called")
-        self.tokenizer = BertTokenizer.from_pretrained('prajjwal1/bert-small')
-        self.model = BertForMaskedLM.from_pretrained('prajjwal1/bert-small')
+        self.tokenizer = AutoTokenizer.from_pretrained('prajjwal1/bert-small')
+        self.model = AutoModelForMaskedLM.from_pretrained('prajjwal1/bert-small')
 
     def encode_input(self, input_text, add_special_tokens=True):
         input_text = input_text + ' ' + self.tokenizer.mask_token
