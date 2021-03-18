@@ -1,6 +1,5 @@
-from typing import Optional
 from fastapi import FastAPI, Depends
-import uvicorn
+from fastapi.responses import JSONResponse
 from next_word_predictor import Model, get_model
 
 app = FastAPI()
@@ -15,5 +14,9 @@ def read_root():
 def read_item(q: str = None,  bert_model: Model = Depends(get_model)):
     print(q)
     predictions = bert_model.predict(q)
-    return {"q": q, "predictions": predictions}
+
+    content = {"q": q, "predictions": predictions}
+    headers = {"Access-Control-Allow-Origin": "*"}
+
+    return JSONResponse(content=content, headers=headers)
 
